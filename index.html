@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - subtain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            background: #1c1c1c;
+            color: white;
+            width: 30%;
+            padding: 30px;
+            text-align: center;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        h1{
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        h1:hover{
+            transform: scale(1.1);
+           
+        }
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .contact, .skills, .languages, .hobbies {
+            margin-top: 25px;
+            text-align: left;
+        }
+        h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin: 8px 0;
+            transition: color 0.3s ease;
+        }
+        ul li:hover {
+            color: #25D366; 
+        }
+        .main-content {
+            width: 70%;
+            padding: 30px;
+        }
+        .main-content h3 {
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .profile-section, .experience-section, .education-section {
+            margin-bottom: 25px;
+        }
+        .education-section{
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .main-content h4 {
+            margin: 10px 0 5px;
+        }
+        .main-content p {
+            margin: 5px 0;
+        }
+        .main-content ul li {
+            transition: color 0.3s ease;
+        }
+        .main-content ul li:hover {
+            color: #25D366; 
+        }
+        
+.button {
+  position: absolute;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+ margin-left: 35%;
+ margin-top: 35px;
+  
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            animation: zoom 0.3s;
+        }
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #25D366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="profile.jpeg" alt="Profile Picture" class="profile-pic" onclick="openModal()">
+            <h1>Subtain Raza</h1>
+            <h2>Software Engineer</h2>
+            <div class="contact">
+                <p>📞 0323 7849843</p>
+                <p>📧 subtainraza@example.com</p>
+                <p>📍 Lahore</p>
+            </div>
+            <div class="skills">
+                <h3>SKILLS</h3>
+                <ul>
+                    <li>Development</li>
+                    <li>SQL Database Management</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>JAVA</li>
+                </ul>
+            </div>
+            <div class="languages">
+                <h3>LANGUAGES</h3>
+                <ul>
+                    <li>English: Proficient</li>
+                    <li>Urdu: Proficient</li>
+                </ul>
+            </div>
+            <div class="hobbies">
+                <h3>HOBBIES</h3>
+                <ul>
+                    <li>Searching</li>
+                    <li>Exploring</li>
+                    <li>Learning</li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="profile-section">
+                <h3>PROFILE</h3>
+                <p>I am a software engineer with experience in a variety of programming languages and a track record of delivering high-quality code. I am skilled in problem-solving and have a strong background in computer science. I am a strong communicator and enjoy working collaboratively with others.</p>
+            </div>
+            <div class="experience-section">
+                <h3>WORK EXPERIENCE</h3>
+                <h4>Senior Software Developer</h4>
+                <p>Corvit – Pakistan (Feb 2025 – Dec 2025)</p>
+                <ul>
+                    <li>Developed and maintained software using Java, Python, and C++</li>
+                    <li>Led cross-functional teams to deliver successful software projects</li>
+                </ul>
+                <h4>Web Developer</h4>
+                <p>Ai Pearlz – Pakistan (Feb 2024 – Dec 2025)</p>
+                <ul>
+                    <li>Developed and maintained various web applications using HTML, CSS, JavaScript, and PHP</li>
+                    <li>Worked with cross-functional teams to gather requirements and design user interfaces</li>
+                </ul>
+            </div>
+            <div class="education-section">
+                <h3>EDUCATION</h3>
+                <h4>Certified in Web</h4>
+                <ul>
+                    <li>Brains College - 2024</li>
+                    <li>Corvit - 2025</li>
+                </ul>
+                <h4>Bachelor in Computer Science</h4>
+                <ul>
+                    <li>Govt Graduate College OF Science</li>
+                </ul>
+            </div>
+            <div>   <!-- From Uiverse.io by Madflows --> 
+                <button class="button">
+                    <span class="button-content">Let's Talk </span>
+                  </button></div>
+        </div>
+    </div>
+ 
+  
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="profile.jpeg" alt="Profile Picture" class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+       alert("Dont Click on Picture")
+        // Function to open the modal
+        function openModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "flex";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
